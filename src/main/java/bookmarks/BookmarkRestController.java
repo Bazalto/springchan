@@ -1,5 +1,8 @@
 package bookmarks;
 
+import bookmarks.AccountRepository;
+import bookmarks.Bookmark;
+import bookmarks.BookmarkRepository;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +11,15 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/")
+class MainController {
+    @RequestMapping(method = RequestMethod.GET)
+    String hello() {
+        return "hello";
+    }
+}
 
 @RestController
 @RequestMapping("/{userId}/bookmarks")
